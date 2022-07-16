@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.MainActivityViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeDetailsBinding
+import com.udacity.shoestore.models.Shoe
 
 class ShoeDetailsFragment : Fragment() {
 
@@ -25,13 +26,13 @@ class ShoeDetailsFragment : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_details, container, false)
 
         viewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
-        binding.viewModel = viewModel
+        binding.shoe = Shoe("", 0.0, "", "")
 
         binding.saveBtn.setOnClickListener {
-            val name = binding.nameEdit.text.toString()
-            val size = binding.sizeEdit.text.toString()
-            val companyName = binding.companyEdit.text.toString()
-            val description = binding.descriptionEdit.text.toString()
+            val name = binding.shoe?.name ?: ""
+            val size = binding.shoe?.size.toString()
+            val companyName = binding.shoe?.company ?: ""
+            val description = binding.shoe?.description ?: ""
 
             if (name.isEmpty()) {
                 Toast.makeText(context, "make sure to enter a valid name", Toast.LENGTH_LONG).show()
