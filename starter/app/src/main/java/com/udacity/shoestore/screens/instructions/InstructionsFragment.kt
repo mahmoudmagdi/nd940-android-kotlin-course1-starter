@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentInstructionsBinding
+import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
 class InstructionsFragment : Fragment() {
 
@@ -18,8 +19,12 @@ class InstructionsFragment : Fragment() {
     ): View {
 
         //TODO (5) Use DataBindingUtil to inflate every layout
-        val binding: FragmentInstructionsBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
+        val binding =
+            FragmentInstructionsBinding.inflate(
+                inflater,
+                container,
+                false
+            ) //TODO: Udacity suggestion
 
         binding.openShowListBtn.setOnClickListener {
             findNavController()

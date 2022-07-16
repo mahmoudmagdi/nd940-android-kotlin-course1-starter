@@ -20,8 +20,8 @@ class WelcomeFragment : Fragment() {
     ): View {
 
         //TODO (5) Use DataBindingUtil to inflate every layout
-        val binding: FragmentWelcomeBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
+        val binding =
+            FragmentWelcomeBinding.inflate(inflater, container, false) //TODO: Udacity suggestion
 
         binding.goToInstructionsBtn.setOnClickListener {
             findNavController()

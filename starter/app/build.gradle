@@ -53,4 +53,7 @@ dependencies {
     // TODO: (2) Add the navigation libraries to the app build.gradle file
     implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
     implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
+
+    //TODO: Udacity suggestion -> https://developer.android.com/kotlin/ktx?gclid=Cj0KCQiAuJb_BRDJARIsAKkycUl6UjpxQds1vgLKSv1uGHtFMnfaJEZj0aijiQ6hh7ScVnEpTbrBGlsaAgRcEALw_wcB&gclsrc=aw.ds#fragment
+    //implementation "androidx.fragment:fragment-ktx:1.5.0"
 }

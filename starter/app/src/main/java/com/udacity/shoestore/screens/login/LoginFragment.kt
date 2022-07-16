@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.FragmentInstructionsBinding
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
 //TODO: (7) Create a new Login destination
@@ -19,18 +20,26 @@ class LoginFragment : Fragment() {
     ): View {
 
         //TODO (5) Use DataBindingUtil to inflate every layout
-        val binding: FragmentLoginBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        val binding =
+            FragmentLoginBinding.inflate(
+                inflater,
+                container,
+                false
+            ) //TODO: Udacity suggestion
 
-        binding.loginBtn.setOnClickListener {
-            findNavController()
-                .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+        with(binding) { //TODO: Udacity suggestion
+
+            loginBtn.setOnClickListener {
+                findNavController()
+                    .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            }
+
+            createBtn.setOnClickListener {
+                findNavController()
+                    .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+            }
         }
 
-        binding.createBtn.setOnClickListener {
-            findNavController()
-                .navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
-        }
 
         return binding.root
     }
